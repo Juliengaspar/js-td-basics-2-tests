@@ -21,3 +21,31 @@ AUTREMENT DIT :
 
 N'oubliez pas de tester votre programme avec différentes années pour vérifier qu'il fonctionne correctement.
 */
+
+
+
+const years = parseInt(prompt('entrer une année à tester'));
+let estBissextile;
+
+//si elle est divisible par 4
+if (years%4 === 0) {
+    if (years % 100 !== 0) {
+        estBissextile = true;
+        if (years % 400 === 0) {
+        estBissextile = false;
+
+        }else{
+        estBissextile = true;
+
+        }
+    }
+    //tester si elle est pas un multiples dec 4
+}else {
+    estBissextile = false
+}
+if (estBissextile === true) {
+    console.log(`${years} est une années bisextile`);
+}else {
+    console.log(`${years} n'est  pas une années bisextile`);
+
+}

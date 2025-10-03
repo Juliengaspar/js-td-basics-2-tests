@@ -18,6 +18,9 @@ Tester avec des montants d'achat de
 */
 
 // 1. Demandez à l'utilisateur d'entrer le montant total des achats.
+const montantTotaux = parseInt(prompt('entrer le montant total des achats'));
+let remise;
+
 // 2. Vérifiez si le montant des achats est supérieur à 25€.
 //    a) Si la condition est vraie, calculez la remise de 10% sur le montant total (0.1 * montant total).
 //    b) Si la condition est fausse, la remise est de 0€.
@@ -26,3 +29,14 @@ Tester avec des montants d'achat de
 //       Assurez-vous que le montant versé aux restos du cœur ne dépasse pas 2€ (utilisez Math.min(2, montant versé)).
 //    b) Si la condition est fausse, la somme versée aux restos du cœur est de 0€.
 // 4. Affichez la somme versée aux restos du cœur dans la console.
+if (montantTotaux > 25) {
+     remise = 0.1 * montantTotaux;
+}else {
+    remise = 0 ;
+}
+if (remise > 5) {
+    sommeVerser =  0.1 * remise;
+}else {
+    sommeVerser =  0;
+}
+console.log(` la somme versée aux restos du cœur ${sommeVerser}!`);
