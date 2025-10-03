@@ -21,8 +21,29 @@ Valeurs de test :
 */
 
 // 1. Demandez à l'utilisateur d'entrer le nombre de KW consommés.
+const kwConsommes = parseInt(prompt('entrer le nombre de KW consommés'))
 // 2. Initialisez une variable cost à 0 pour stocker le coût total.
+let cost = 0
 // 3. Vérifiez combien de KW sont compris dans la tranche de 30 KW.
+if (kwConsommes <= 30) {
+    cost = kwConsommes * 25;
+}
 // 4. Calculez le coût de cette tranche (KW dans la tranche * 25 centimes) et ajoutez-le à cost.
+else {
+    cost = 30 * 25;
+}
 // 5. Répétez les étapes 3 et 4 pour les tranches de 31 à 50 KW (20 centimes), de 51 à 70 KW (15 centimes), et les KW restants (10 centimes).
+if (kwConsommes > 30) {
+    let cost2 = Math.max(kwConsommes - 30, 20)
+    cost += cost2 * 20
+}
+if (kwConsommes > 50) {
+    let cost3 = Math.max(kwConsommes - 50, 20)
+    cost += cost3 * 15;
+}
+if (kwConsommes > 70) {
+    let cost4 = kwConsommes - 70;
+    cost += cost4 * 15;
+}
 // 6. Affichez le coût total (cost) en euros dans la console.
+console.log(' le coût total: ' + (cost/100) + '€');
