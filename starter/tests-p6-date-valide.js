@@ -27,3 +27,44 @@ N'oubliez pas de tester votre programme avec diverses dates pour vous assurer qu
 
 Vous pouvez utiliser les exemples que vous avez fournis comme point de départ.
 */
+const year = parseInt(prompt("entrez une année "));
+const month = parseInt(prompt("entrez une  moints entre [1, 12] "));
+const day = parseInt(prompt("entrez une  jours entre [1, 31] "));
+let maxDays = 31;
+let isValide = false;
+let isBesextiles = false;
+
+isValide = !((isNaN(day)) || (isNaN(month)) || (isNaN(year)));
+
+if (((year%4 === 0) && !(year%100 === 0)) || (year%400 === 0)) {
+    let isBesextiles = true;
+
+}
+if((day<1)|| (day>31)) {
+    isValide = !isValide;
+}
+if((month<1)|| (month>12)) {
+    isValide = !isValide;
+}
+
+if(month===2) {
+    if(isBesextiles === true) {
+        if(day>29) {
+            isValide = false;
+        }else {
+            isValide = true;
+        }
+    }else {
+        if(day>28) {
+            isValide = false;
+        }else {
+            isValide = true;
+        }
+    }
+}
+
+if(isValide === false){
+    console.log("date invalide")
+}else {
+    console.log(`date valide ${day} : ${month} : ${year}`)
+}
