@@ -22,9 +22,9 @@ Valeurs de test :
 */
 
 // 1. Demandez à l'utilisateur d'entrer le montant des achats.
-const purschasemount = prompt("entrer le montant des achats");
+const montantAchat = parseInt(prompt("entrer le montant des achats"));
 // 2. Demandez à l'utilisateur d'entrer le nombre d'enfants dans la famille.
-const numberOfChildren = prompt("entrer  nombre d’enfants dans la famille");
+const nbEnfant = parseInt(prompt("entrer  nombre d’enfants dans la famille"));
 // 3. Initialisez une variable de réduction (discount) à 0.
 let reduction = 0;
 // 4. Vérifiez si le montant des achats est supérieur à 50€.
@@ -32,9 +32,9 @@ let reduction = 0;
 // 6. Si l'une des conditions de l'étape 4 ou de l'étape 5 est vraie, attribuez 10% de réduction (discount = montant des achats * 0.1).
 // 7. Sinon, attribuez 5% de réduction (discount = montant des achats * 0.05).
 // 8. Affichez le montant de la réduction (discount) en euros dans la console.
-if ((purschasemount>50) || (numberOfChildren>=3)) {
-    reduction = (purschasemount*0.1);
+if ((montantAchat>50) || (nbEnfant>=3)) {
+    reduction = 0.1;
 }else {
-    reduction = (purschasemount*0.05);
+    reduction = 0.05;
 }
-console.log(`le montant de la réduction est egale a ${reduction}`);
+console.log(`le nouveaux prix  =  ${montantAchat}-${reduction*100}% = ${montantAchat - (montantAchat*reduction)} `);

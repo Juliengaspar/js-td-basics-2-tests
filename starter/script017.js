@@ -28,6 +28,13 @@ if (typeof  height !== "undefined"){
 
 }
 
+const userInput = prompt("dit moi qqch");
+if (isNaN(parseInt(userInput))){
+    console.log('vous avez entrer un string');
+}else {
+    console.log('vous avez entrer un nombre');
+}
+
 // 17 - 2. Les opérateurs d'égalité
 // 1. Écrivrez une instruction conditionnelle qui affiche bien à propos "J'ai testé si 23 était égal à '23' sans vérifier le type. L'opérateur que j'ai utilisé a opéré une conversion de type"
 // 2. Changez ensuite en utilisant l'opérateur d'égalité stricte pour vérifier que cette phrase ne s'affiche plus

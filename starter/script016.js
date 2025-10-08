@@ -8,33 +8,50 @@
 // 2. Testez en changeant l'âge de John (14 ans, 24 ans)
 const firstName = "John";
 let age = 15;
-if(age <18 ){
+if (age < 18) {
     console.log(`${firstName} boit des jus`)
-}else {
+} else {
     console.log(`${firstName} boit des bières`)
 }
+//même ex mais en ternaire
+const nbBiere = 1;
+//constante                 condition  Cas1    ou Cas2
+const motBiere = nbBiere > 1 ? 'bières' : 'bière';
+console.log(`${firstName} boit ${nbBiere}  ${motBiere} `);
+console.log(`${firstName} boit ${nbBiere}  ${nbBiere > 1 ? 'bières' : 'bière'} `);
+/*
+if(nbBiere>1){
+console.log(`${firstName} boit ${nbBiere}  ${motBiere} `);
+
+}else {
+    console.log(`${firstName} boit ${nbBiere}  ${motBiere}`)
+}
+
+
+ */
+//operateur ternaire
 // MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou une autre valeur à une variable selon qu'une condition est remplie ou pas
 // 1. Affectez, selon qu'on est majeur ou pas, la valeur "bières" ou la valeur "jus" à la variable drink
 let drink;
-if(age <18 ){
+if (age < 18) {
     drink = "jus";
-}else {
+} else {
     drink = "bières";
 }
 // 2. Afficher "John boit des …" (l'affichage s'adapte à l'âge de John, tester différents cas)
 console.log(`${firstName} boit des ${drink}`);
 // Faites la même chose en utilisant un if / else
-if(age <18 ){
+if (age < 18) {
     console.log(`${firstName} boit des jus`)
-}else {
+} else {
     console.log(`${firstName} boit des bières`)
 }
 // 16 - 2. L'instruction Switch
-switch (true){
-    case age<18:
+switch (true) {
+    case age < 18:
         console.log(`${firstName} boit des jus`);
         break;
-    case age>18:
+    case age > 18:
         console.log(`${firstName} boit des bières`);
         break;
     default:
@@ -50,47 +67,77 @@ const job = "etudiants";
 //   - si c'est designer, "John conçoit de beaux sites web" et,
 //   - dans tous les autres cas, "John fait autre chose"
 // 3. Testez les différents cas de figure en changeant la profession de John
-switch (job){
+
+
+// //cas avec if && else if && else
+// if(job==='instituteur') {
+//     console.log(`${firstName} enseigne la programmation aux enfants`);
+// }
+//     else if(job==='chauffeur'){
+//     console.log(`${firstName} conduit un taxi à Lisbonne`);
+//     }
+//     else if(job==='designer'){
+//     console.log(`${firstName} conçoit de beaux sites web`);
+//     }else {
+//     console.log("fait autre chose")
+// }
+
+
+switch (job) {
     case "instituteur":
         console.log(`${firstName} enseigne la programmation aux enfants`);
         break;
     case "chauffeur":
         console.log(`${firstName} conduit un taxi à Lisbonne`);
         break;
-        case "designer":
+    case "designer":
         console.log(`${firstName} conçoit de beaux sites web`);
         break;
     default:
         console.log("fait autre chose")
 }
+
 // 1. John a vielli : il a à présent 56 ans…
-// 2. Utilisez un switch pour affciher :
+// 2. Utilisez un switch pour afficher :
 //   - si l'âge est inférieur à 13, "John est un garçon",
 //   - entre 13 et 20 ans, "John est un adolescent",
 //   - entre 20 et 30 ans, "John est un jeune homme"
 //   - et sinon "John est un homme".
 // 3. Testez les différents cas de figure en changeant l'âge de John
 // 4. Testez avec un âge de 7 ans en enlevant la 2e instruction break pour voir ce que cela a comme impact
-age = 7;
-switch (true){
-    case age<13:
+const ageJohn = 7;
+//version avec if/else if / else
+if (ageJohn < 13) {
+    console.log(`${firstName} est un garçon`);
+} else if (ageJohn >= 13 && ageJohn <= 20) {
+    console.log(`${firstName} est un adolescent`);
+} else if (ageJohn > 20 && ageJohn <= 30) {
+    console.log(`${firstName} est un jeune homme`);
+} else {
+    console.log("est homme");
+}
+
+//version avec switch /case
+switch (true) {
+    case ageJohn < 13://expression bool ==> false expression elle vaux qqch
         console.log(`${firstName} est un garçon`);
         break;
-    case age>=13 && age<20:
+    case ageJohn >= 13 && ageJohn < 20:
         console.log(`${firstName} est un adolescent`);
         break;
-    case age>=20 && age<30:
+    case ageJohn >= 20 && ageJohn < 30:
         console.log(`${firstName} est un jeune homme`);
         break;
     default:
-        console.log("est homme")
+        console.log("est homme");
 }
+
 // Autre application de l'instruction switch
 // 1. Demandez à l'utilisateur d'entrer l'information
 //   "Quel temps fait-il dehors ? Répondez par un des quatre mots suivants :
 //   soleil, vent, pluie ou neige."
 // 2. Stockez cette information dans une variable meteo
-// 3.  a) s'il fait soleil, affichez le message "Sortez en t-shirt."
+// 3. a) s'il fait soleil, affichez le message "Sortez en t-shirt."
 //    b) s'il y a du vent, affichez "Sortez en pull."
 //    c) s'il pleut, affichez "Sortez en blouson."
 //    d) s'il neige, affichez "Restez au chaud à la maison."
@@ -98,8 +145,8 @@ switch (true){
 //     — c.-à-d. qu'elle n'a entré aucun de ces qautre mots-là),
 //     affichez "Je n'ai pas compris !"
 
-const meteo = prompt("Quel temps fait-il dehors ? Répondez par un des quatre mots suivants :soleil, vent, pluie ou neige.");
-switch (meteo) {
+const weather = prompt("Quel temps fait-il dehors ? Répondez par un des quatre mots suivants :(soleil, vent, pluie ou neige).");
+switch (weather) {
     case "soleil":
         console.log("Sortez en t-shirt.");
         break;
@@ -122,23 +169,23 @@ switch (meteo) {
 // 2. Affichez ensuite dans la console le message suivant : "Les jours suivants se sont déjà écoulés depuis le début de la semaine : …, …, …"
 const numberDays = parseInt(prompt("entrer le numéro du jour de la semaine [1, 7]"));
 console.log("Les jours suivants se sont déjà écoulés depuis le début de la semaine :");
-switch (numberDays){
+switch (numberDays) {
     case 7:
         console.log("samedi");
-        case 6:
+    case 6:
         console.log("vendredi");
-        case 5:
+    case 5:
         console.log("jeudi");
-        case 4:
+    case 4:
         console.log("mercredi");
-        case 3:
+    case 3:
         console.log("mardi");
-        case 2:
+    case 2:
         console.log("lundi");
-        case 1:
-            console.log("Aucun jour ne s'est encore écoulé.");
-            break;
-            default:
+    case 1:
+        console.log("Aucun jour ne s'est encore écoulé.");
+        break;
+    default:
         console.log("numero invalid");
 }
 

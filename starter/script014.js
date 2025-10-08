@@ -26,6 +26,18 @@ const nombre = parseInt(prompt("entrez un nombre alatoires"))
 if (nombre>0){
     console.log(`${nombre} est positif`)
 }
+const userInput = prompt("entrez un nombre");
+const results = parseInt(userInput);//convertire une chaine de caracter vers un nombres
+
+if (!isNaN(results)){
+    console.log('yes c’est un numero');
+    if (results > 0){
+    console.log(`${results} est positif`);
+    }
+
+}
+
+console.log(!isNaN(results)&& results > 0 ? `${results} est positifs ` : '');
 // Écrivez un programme qui dit "Bonjour" à l'utilisateur et n'accepte de lui répondre que si celui-ci lui dit "Bonjour" à son tour. Dans ce cas, le programme lui répond "Toi, tu es poli, tu me dis bonjour, je veux bien te parler… Comment t'appelles-tu ?". Il enregistre alors l'entrée dans une variable nom et, seulement si l'utilisateur a bien entré quelque chose dans le champ (il prend la peine de vérifier avant), il lui répond (dans la console), "Je t'aime bien, …".
 const hello = (prompt("Bonjour"));
 if (hello === "Bonjour"){
